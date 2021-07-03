@@ -1,7 +1,7 @@
 // adding a api key to the variable
 const key = "1e3QifSGL5MsIAaINbTT3y9TdCNRUjhz";
 
-// getting weather information
+// get weather information
 const getWeather =  async (id) => {
 
     const base = "http://dataservice.accuweather.com/currentconditions/v1/";
@@ -14,7 +14,7 @@ const getWeather =  async (id) => {
 
 };
 
-// getting city information
+// get city information
 const getCity = async (city) => {
     
     // getting resource link of city
@@ -28,9 +28,3 @@ const getCity = async (city) => {
     return data[0];
 
 };
-
-getCity ("mumbai").then(data => {
-        return getWeather(data.Key);
-    }).then(data => {
-        console.log(data);
-    }).catch(err => console.log(err));
